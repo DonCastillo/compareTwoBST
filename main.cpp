@@ -6,17 +6,24 @@
 
 int main()
 {
-
+    bool anyBrackets;
     std::string stringInput;
 
-    std::cout << "Enter an expression: ";
-    getline(std::cin, stringInput);
 
-    Expression exp(stringInput);
-    exp.removeWhitespace();
-    exp.segChars();
-    exp.printBrackets();
-    exp.printNonBrackets();
+    do{
+
+          std::cout << "Enter an expression: ";
+          getline(std::cin, stringInput);
+
+          Expression exp(stringInput);
+          exp.removeWhitespace();
+
+          anyBrackets = exp.anyBrackets();
+
+          if (anyBrackets)
+            exp.areBracketsMatching();
+
+      }while(!anyBrackets);
 
 
     return 0;

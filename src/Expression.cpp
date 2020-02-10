@@ -13,6 +13,117 @@ Expression::~Expression()
 }
 
 
+
+// segregrate brackets and non brackets
+// and put them to their stacks
+bool Expression::anyBrackets()
+{
+    for(char c : expression)
+    {
+       switch(c)
+       {
+            case '(':
+            case ')':
+            case '[':
+            case ']':
+            case '{':
+            case '}':
+            case '<':
+            case '>':
+                return true;
+            default:
+                break;
+       }
+    }
+    std::cout << "No brackets in the expression\n\n";
+    return false;
+}
+
+
+
+
+
+void Expression::compareTop(char c)
+{
+  char openingBracket;
+  switch(c)
+  {
+      // get corresponding opening bracket if c is closing bracket
+      case ')':
+        openingBracket = '(';
+        break;
+      case ']':
+        openingBracket = '[';
+        break;
+      case '}':
+        openingBracket = '{';
+        break;
+      case '>':
+        openingBracket = '<';
+        break;
+      // return if c is a opening bracket
+      default:
+        brackets.push(c);
+        return;
+  }
+  // compare top stack to the opening bracket
+  if(brackets.top() == openingBracket)
+    brackets.pop();
+  else
+    brackets.push(c);
+  return;
+}
+
+
+
+
+
+
+bool Expression::areBracketsMatching()
+{
+  // check if the brackets are properly matched
+  for(char c : expression)
+  {
+     switch(c)
+     {
+          case '(':
+          case ')':
+          case '[':
+          case ']':
+          case '{':
+          case '}':
+          case '<':
+          case '>':
+              if(brackets.empty())
+                brackets.push(c);
+              else
+                compareTop(c);
+              break;
+          default:
+              break;
+     }
+  }
+
+  // if brackets is empty, then all brackets are matching
+  if(brackets.empty())
+  {
+    std::cout << "Brackets are properly nested.\n";
+    return true;
+  }
+  else
+  {
+    std::cout << "Brackets are NOT properly nested.\n";
+    return false;
+  }
+
+}
+
+
+
+
+
+
+
 // segregrate brackets and non brackets
 // and put them to their stacks
 void Expression::segChars()
@@ -51,6 +162,7 @@ void Expression::removeWhitespace()
             sanitzedString += c;
     }
     expression = sanitzedString;
+    return;
 }
 
 

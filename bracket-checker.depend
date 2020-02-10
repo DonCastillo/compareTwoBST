@@ -19,3 +19,13 @@
 	"Expression.h"
 	<string>
 
+1581375290 source:/home/casd2720/3620/bracket-checker/main.cpp
+	<iostream>
+	<stack>
+	<string>
+	"Expression.h"
+
+1581375398 source:/home/casd2720/3620/bracket-checker/src/Expression.cpp
+	"Expression.h"
+	<string>
+

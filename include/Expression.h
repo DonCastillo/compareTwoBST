@@ -14,6 +14,9 @@ class Expression
         void print();
         void printBrackets();
         void printNonBrackets();
+        bool areBracketsMatching();
+        void compareTop(char c);
+        bool anyBrackets();
 
     protected:
 
@@ -21,7 +24,6 @@ class Expression
         std::string expression;
         std::stack<char> brackets;
         std::stack<char> nonBrackets;
-
 };
 
 #endif // EXPRESSION_H
