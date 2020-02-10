@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1581334071 source:c:\users\donqc\desktop\3620-code\main.cpp
+	<iostream>
+	<stack>
+	<string>
+	"Expression.h"
+
+1581329516 source:c:\users\donqc\desktop\3620-code\src\help.cpp
+	"Help.h"
+
+1581328944 c:\users\donqc\desktop\3620-code\include\help.h
+
+1581333929 c:\users\donqc\desktop\3620-code\include\expression.h
+	<string>
+	<iostream>
+	<stack>
+
+1581334442 source:c:\users\donqc\desktop\3620-code\src\expression.cpp
+	"Expression.h"
+	<string>
+
