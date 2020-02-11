@@ -2,28 +2,40 @@
 #include <stack>
 #include <string>
 #include "Expression.h"
-
+#include "Menu.h"
 
 int main()
 {
-    bool anyBrackets;
+    bool loop=true;
+    char commandKey;
     std::string stringInput;
 
 
-    do{
 
+    Menu menu;
+    menu.displayTitle();
+    menu.displayInstructions();
+
+    do{
+          menu.displayCommands();
           std::cout << "Enter an expression: ";
           getline(std::cin, stringInput);
 
-          Expression exp(stringInput);
-          exp.removeWhitespace();
+          commandKey = menu.getCommandFlag(stringInput);
 
-          anyBrackets = exp.anyBrackets();
+          if(commandKey == 'h')
+            menu.displayInstructions();
+          else if (commandKey == 'q')
+            loop=false;
+          else
+          {
+              Expression exp(stringInput);
+              exp.removeWhitespace();
 
-          if (anyBrackets)
-            exp.areBracketsMatching();
-
-      }while(!anyBrackets);
+              if (exp.anyBrackets())
+                exp.areBracketsMatching();
+          }
+      }while(loop);
 
 
     return 0;

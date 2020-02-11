@@ -28,8 +28,6 @@ bool Expression::anyBrackets()
             case ']':
             case '{':
             case '}':
-            case '<':
-            case '>':
                 return true;
             default:
                 break;
@@ -57,9 +55,6 @@ void Expression::compareTop(char c)
         break;
       case '}':
         openingBracket = '{';
-        break;
-      case '>':
-        openingBracket = '<';
         break;
       // return if c is a opening bracket
       default:
@@ -92,8 +87,6 @@ bool Expression::areBracketsMatching()
           case ']':
           case '{':
           case '}':
-          case '<':
-          case '>':
               if(brackets.empty())
                 brackets.push(c);
               else
@@ -107,12 +100,12 @@ bool Expression::areBracketsMatching()
   // if brackets is empty, then all brackets are matching
   if(brackets.empty())
   {
-    std::cout << "Brackets are properly nested.\n";
+    std::cout << "Brackets are properly nested.\n\n";
     return true;
   }
   else
   {
-    std::cout << "Brackets are NOT properly nested.\n";
+    std::cout << "Brackets are NOT properly nested.\n\n";
     return false;
   }
 
@@ -138,8 +131,6 @@ void Expression::segChars()
             case ']':
             case '{':
             case '}':
-            case '<':
-            case '>':
                 brackets.push(c);
                 break;
             default:
