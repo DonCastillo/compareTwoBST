@@ -1,3 +1,9 @@
+/**
+  @author  Don Castillo
+  @date    10/02/2020
+  @brief   Checks if the expression is properly nested
+*/
+
 #include <iostream>
 #include <stack>
 #include <string>
