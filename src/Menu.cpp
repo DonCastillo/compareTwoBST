@@ -10,6 +10,14 @@ Menu::~Menu()
   //dtor
 }
 
+
+
+
+/**
+  @brief  retrieve first letter of the string to determine command
+  @param  string
+  @return lowercase of first character of the string
+*/
 char Menu::getCommandFlag(std::string stringInput)
 {
   char c;
@@ -21,6 +29,13 @@ char Menu::getCommandFlag(std::string stringInput)
   return c;
 }
 
+
+
+/**
+  @brief  prints program title
+  @param  none
+  @return none
+*/
 void Menu::displayTitle()
 {
   std::cout << std::setfill('=') << std::setw(WIDTH) << "\n";
@@ -30,6 +45,14 @@ void Menu::displayTitle()
   return;
 }
 
+
+
+
+/**
+  @brief  prints program instruction
+  @param  none
+  @return none
+*/
 void Menu::displayInstructions()
 {
   std::cout << "\nInstruction:\n";
@@ -43,6 +66,11 @@ void Menu::displayInstructions()
 }
 
 
+/**
+  @brief  prints commands
+  @param  none
+  @return none
+*/
 void Menu::displayCommands()
 {
   std::cout << "\n\n";

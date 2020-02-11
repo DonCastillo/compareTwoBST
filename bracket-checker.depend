@@ -19,26 +19,26 @@
 	"Expression.h"
 	<string>
 
-1581381710 source:/home/casd2720/3620/bracket-checker/main.cpp
+1581383639 source:/home/casd2720/3620/bracket-checker/main.cpp
 	<iostream>
 	<stack>
 	<string>
 	"Expression.h"
 	"Menu.h"
 
-1581381048 source:/home/casd2720/3620/bracket-checker/src/Expression.cpp
+1581383125 source:/home/casd2720/3620/bracket-checker/src/Expression.cpp
 	"Expression.h"
 	<string>
 
-1581373413 /home/casd2720/3620/bracket-checker/include/Expression.h
+1581383147 /home/casd2720/3620/bracket-checker/include/Expression.h
 	<string>
 	<iostream>
 	<stack>
 
-1581381891 source:/home/casd2720/3620/bracket-checker/src/Menu.cpp
+1581383408 source:/home/casd2720/3620/bracket-checker/src/Menu.cpp
 	"Menu.h"
 
-1581380314 /home/casd2720/3620/bracket-checker/include/Menu.h
+1581383643 /home/casd2720/3620/bracket-checker/include/Menu.h
 	<iostream>
 	<iomanip>
 	<string>

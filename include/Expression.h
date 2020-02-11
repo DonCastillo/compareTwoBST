@@ -9,11 +9,8 @@ class Expression
     public:
         Expression(std::string e);
         virtual ~Expression();
-        void segChars();
         void removeWhitespace();
         void print();
-        void printBrackets();
-        void printNonBrackets();
         bool areBracketsMatching();
         void compareTop(char c);
         bool anyBrackets();
@@ -23,7 +20,6 @@ class Expression
     private:
         std::string expression;
         std::stack<char> brackets;
-        std::stack<char> nonBrackets;
 };
 
 #endif // EXPRESSION_H

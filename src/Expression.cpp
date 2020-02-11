@@ -13,9 +13,12 @@ Expression::~Expression()
 }
 
 
+/**
+  @brief  determine if expression has any bracket operator
+  @param  none
+  @return TRUE if there's a bracket operator, otherwise FALSE
+*/
 
-// segregrate brackets and non brackets
-// and put them to their stacks
 bool Expression::anyBrackets()
 {
     for(char c : expression)
@@ -40,7 +43,11 @@ bool Expression::anyBrackets()
 
 
 
-
+/**
+  @brief  remove object on top of stack if it is c's match
+  @param  char c
+  @return none
+*/
 void Expression::compareTop(char c)
 {
   char openingBracket;
@@ -71,9 +78,11 @@ void Expression::compareTop(char c)
 
 
 
-
-
-
+/**
+  @brief  push all bracket operators into the stack
+  @param  none
+  @return TRUE if brackets are properly nested, otherwise FALSE
+*/
 bool Expression::areBracketsMatching()
 {
   // check if the brackets are properly matched
@@ -113,37 +122,11 @@ bool Expression::areBracketsMatching()
 
 
 
-
-
-
-
-// segregrate brackets and non brackets
-// and put them to their stacks
-void Expression::segChars()
-{
-    for(char c : expression)
-    {
-       switch(c)
-       {
-            case '(':
-            case ')':
-            case '[':
-            case ']':
-            case '{':
-            case '}':
-                brackets.push(c);
-                break;
-            default:
-                nonBrackets.push(c);
-                break;
-       }
-    }
-}
-
-
-
-
-// remove whitespaces
+/**
+  @brief  removes whitespace characters in the expression
+  @param  none
+  @return none
+*/
 void Expression::removeWhitespace()
 {
     std::string sanitzedString;
@@ -157,36 +140,14 @@ void Expression::removeWhitespace()
 }
 
 
-// print original expression
+/**
+  @brief  prints the expression
+  @param  none
+  @return none
+*/
 void Expression::print()
 {
     std::cout << expression << std::endl;
 }
 
-
-
-// print bracket characters
-void Expression::printBrackets()
-{
-    std::stack<char>copyBrackets = brackets;
-    while(!copyBrackets.empty())
-    {
-        char c = copyBrackets.top();
-        copyBrackets.pop();
-        std::cout << c << std::endl;
-    }
-}
-
-
-// print non bracket characters
-void Expression::printNonBrackets()
-{
-    std::stack<char>copyNonBrackets = nonBrackets;
-    while(!copyNonBrackets.empty())
-    {
-        char c = copyNonBrackets.top();
-        copyNonBrackets.pop();
-        std::cout << c << std::endl;
-    }
-}
 
