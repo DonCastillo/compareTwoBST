@@ -13,7 +13,7 @@ all : bracket-checker
 # Note: executable lines, ie. $(CCC) ..., always begin with a tab.
 # $^ = this target
 # $@ = this/these dependencies
-test_BTernary : main.o Expression.o Menu.o
+bracket-checker : main.o Expression.o Menu.o
 	$(CCC) $(CCCFLAGS) $^ -o $@
 
 # if 2 or more problems in assignment, you can compile them all with extra 
@@ -24,7 +24,7 @@ test_BTernary : main.o Expression.o Menu.o
 # default rule compiling .cc to .o
 # all .o file targets are dependent on the corresponding .cc files
 # $< = the corresponding .cc file
-%.o : %.cc
+%.o : %.cpp
 	$(CCC) -c $(CCCFLAGS) $<
 
 # Don't need next lines b/c of the above default rule but no harm including them
@@ -37,4 +37,4 @@ clean:
 	rm -f *.o *~ *% *# .#*
 
 clean-all: clean
-	rm -f test_BTernary
+	rm -f bracket-checker
