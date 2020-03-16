@@ -8,7 +8,7 @@
 class Menu
 {
   public:
-    Menu();
+    Menu(std::string title, std::string author);
     virtual ~Menu();
     void displayTitle();
     void displayInstructions();
@@ -19,8 +19,8 @@ class Menu
 
   private:
     const int WIDTH = 37;
-    const std::string TITLE = "BRACKET CHECKER";
-    const std::string AUTHOR = "Don Castillo";
+    std::string TITLE;
+    std::string AUTHOR;
 };
 
 #endif // MENU_H

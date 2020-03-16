@@ -1,7 +1,9 @@
 #include "Menu.h"
 
-Menu::Menu()
+Menu::Menu(std::string title, std::string author)
 {
+    TITLE = title;
+    AUTHOR = author;
   //ctor
 }
 
@@ -56,11 +58,7 @@ void Menu::displayTitle()
 void Menu::displayInstructions()
 {
   std::cout << "\nInstruction:\n";
-  std::cout << "This program checks if the bracketing operators\n"
-            << "in a mathematical expression is properly nested\n"
-            << "Bracketing operators include ( ), { }, [ ].\n"
-            << "Example: (a+b) is properly nested\n"
-            << "         (a+b  is NOT properly nested\n";
+  std::cout << "This program compares two binary search trees if\nthey are equal or not";
   return;
 
 }
@@ -76,7 +74,7 @@ void Menu::displayCommands()
   std::cout << "\n\n";
   std::cout << std::setfill('.') << std::setw(WIDTH) << "\n";
   std::cout << "Commands:\n"
-            << "Q -- to quit,  H -- for instruction\n";
+            << "H -- for instruction,  Any key -- to quit\n";
   std::cout << std::setfill('.') << std::setw(WIDTH) << "\n\n";
   return;
 

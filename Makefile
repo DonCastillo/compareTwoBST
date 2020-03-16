@@ -6,14 +6,14 @@ CCCFLAGS = -Wall -g -std=c++11
 
 # all is called a target, after the colon you have dependencies
 # ie. "the target all is dependent on the executables
-all : bracket-checker
+all : bst-printElements
 
 # the target <excecutable1> is dependent on the list of dependencies
 # the line following  is the required executable (don't need to adjust it)
 # Note: executable lines, ie. $(CCC) ..., always begin with a tab.
 # $^ = this target
 # $@ = this/these dependencies
-bracket-checker : main.o Expression.o Menu.o
+bst-printElements : main.o Menu.o
 	$(CCC) $(CCCFLAGS) $^ -o $@
 
 # if 2 or more problems in assignment, you can compile them all with extra 
@@ -31,10 +31,9 @@ bracket-checker : main.o Expression.o Menu.o
 # In the following lines, make knows that the .cc file is required in the
 # current dependency so you can leave it out.  You can also leave out the
 # corresponding executable line
-Expression.o : Expression.h
 Menu.o : Menu.h
 clean:
 	rm -f *.o *~ *% *# .#*
 
 clean-all: clean
-	rm -f bracket-checker
+	rm -f bst-printElements
