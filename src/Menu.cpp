@@ -58,7 +58,9 @@ void Menu::displayTitle()
 void Menu::displayInstructions()
 {
   std::cout << "\nInstruction:\n";
-  std::cout << "This program compares two binary search trees if\nthey are equal or not";
+  std::cout << "This program compares two binary search trees if they are equal or not.\n"
+            << "Enter a set of unique integers in trees A and B. Duplicate integers are ignored.\n"
+            << "The order in which the integers are entered will affect how the tree is structured.\n";
   return;
 
 }
