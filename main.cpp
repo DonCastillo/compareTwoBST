@@ -45,7 +45,10 @@ bool isSimilar(BinarySearchTree<int>::BinaryNode* nodeA,
 
 void showData(std::string name, const BinarySearchTree<int> tree)
 {
-    std::cout << "\n\nRoot of " << name << ": " << tree.root->element << "\n";
+    if(tree.root != nullptr)
+    {
+        std::cout << "\n\nRoot of " << name << ": " << tree.root->element << "\n";
+    }
     std::cout << "\nData in " << name << " (sorted):\n";
     tree.printTree();
 }
