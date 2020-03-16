@@ -6,14 +6,14 @@ CCCFLAGS = -Wall -g -std=c++11
 
 # all is called a target, after the colon you have dependencies
 # ie. "the target all is dependent on the executables
-all : bst-printElements
+all : comparingBST
 
 # the target <excecutable1> is dependent on the list of dependencies
 # the line following  is the required executable (don't need to adjust it)
 # Note: executable lines, ie. $(CCC) ..., always begin with a tab.
 # $^ = this target
 # $@ = this/these dependencies
-bst-printElements : main.o Menu.o
+comparingBST : main.o Menu.o BinarySearchTree.o 
 	$(CCC) $(CCCFLAGS) $^ -o $@
 
 # if 2 or more problems in assignment, you can compile them all with extra 
@@ -32,8 +32,9 @@ bst-printElements : main.o Menu.o
 # current dependency so you can leave it out.  You can also leave out the
 # corresponding executable line
 Menu.o : Menu.h
+BinarySearchTree.o : BinarySearchTree.h 
 clean:
 	rm -f *.o *~ *% *# .#*
 
 clean-all: clean
-	rm -f bst-printElements
+	rm -f comparingBST
